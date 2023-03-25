@@ -4,8 +4,9 @@ function [x, niters] = Method_of_Steepest_Descent_ichol(A, b, x0)
     L = sparse(ichol(sparse(A), struct('type', 'ict', 'droptol', 1e-3, ...
         'michol', 'off')));
     % Initialize x_0 with all zeros
-    M = L * L';
-    cond(M)
+%     M = L * L';
+%     cond(M)
+%     norm(A-M, 2)
     x = x0;
     niters = 0;
     r = b - A * x;
